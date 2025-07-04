@@ -45,13 +45,13 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   });
 
   return (
-    <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
+    <div style={{ background: "#f8fafc", minHeight: "100vh", fontFamily: "Inter, Arial, sans-serif" }}>
       {/* Navigation Bar */}
       <nav
         style={{
           width: "100%",
           background: "#fff",
-          borderBottom: "1px solid #e5e7eb",
+          borderBottom: "1px solid rgb(233, 233, 234)",
           padding: "0 40px",
           display: "flex",
           alignItems: "center",
@@ -60,59 +60,50 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           top: 0,
           zIndex: 10,
           boxSizing: "border-box",
+          fontFamily: "Inter, Arial, sans-serif",
         }}
       >
-        <div style={{ fontWeight: 700, fontSize: 22, color: "#222" }}>
+        <div style={{ fontWeight: 700, fontSize: 20, color: "#222", fontFamily: "Inter, Arial, sans-serif" }}>
           FinanceFirst
         </div>
         <div style={{ flex: 1 }} />
         <div style={{ display: "flex", alignItems: "center" }}>
-          <button style={navButtonStyle}>Accounts</button>
-          <button style={navButtonStyle}>Payments</button>
-          <button style={navButtonStyle}>Cards</button>
-          <button style={navButtonStyle}>Transfers</button>
-          <button style={navButtonStyle}>Investments</button>
-          <div style={{
-            width: 36, height: 36, borderRadius: "50%", background: "#f3f4f6",
-            display: "flex", alignItems: "center", justifyContent: "center", marginLeft: 16
-          }}>
-            <span role="img" aria-label="bell">🔔</span>
-          </div>
-          <div style={{
-            width: 36, height: 36, borderRadius: "50%", background: "#f3f4f6",
-            display: "flex", alignItems: "center", justifyContent: "center", marginLeft: 12
-          }}>
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="profile" style={{ width: 28, height: 28, borderRadius: "50%" }} />
-          </div>
+          <button style={navButtonStyle}>Home</button>
+          <button style={navButtonStyle}>Services</button>
+          <button style={navButtonStyle}>Loans</button>
+          <button style={navButtonStyle}>Investment</button>
+          <button style={navButtonStyle}>Profile</button>
+          <button style={navButtonStyle}>About us</button>
         </div>
       </nav>
 
-      <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
+      <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px", fontFamily: "Inter, Arial, sans-serif" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h1 style={{ fontSize: 32, fontWeight: 700, margin: "32px 0 24px 0" }}>Recent Transactions</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 700, margin: "32px 0 24px 0", fontFamily: "Inter, Arial, sans-serif" }}>Recent Transactions</h1>
           <button
             onClick={onBack}
             style={{
               background: "#e5e7eb",
               color: "#222",
               fontWeight: 600,
-              fontSize: 16,
+              fontSize: 14,
               padding: "8px 24px",
               border: "none",
               borderRadius: 8,
               cursor: "pointer",
+              fontFamily: "Inter, Arial, sans-serif",
             }}
           >
-            Back to Summary
+            Back to Dashboard
           </button>
         </div>
 
         {/* Filter Section */}
         <div style={{ marginBottom: 32 }}>
-          <div style={{ fontWeight: 600, fontSize: 18, marginBottom: 16 }}>Filter</div>
+          <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 16, fontFamily: "Inter, Arial, sans-serif" }}>Filter</div>
           <div style={{ display: "flex", gap: 16, marginBottom: 16 }}>
             <div>
-              <label style={{ color: "#64748b", fontSize: 15 }}>From</label>
+              <label style={{ color: "#64748b", fontSize: 14, fontFamily: "Inter, Arial, sans-serif" }}>From</label>
               <input
                 type="date"
                 value={filters.from}
@@ -121,7 +112,7 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
               />
             </div>
             <div>
-              <label style={{ color: "#64748b", fontSize: 15 }}>To</label>
+              <label style={{ color: "#64748b", fontSize: 14, fontFamily: "Inter, Arial, sans-serif" }}>To</label>
               <input
                 type="date"
                 value={filters.to}
@@ -151,12 +142,13 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                 background: "#e5e7eb",
                 color: "#222",
                 fontWeight: 600,
-                fontSize: 16,
+                fontSize: 14,
                 padding: "8px 24px",
                 border: "none",
                 borderRadius: 8,
                 cursor: "pointer",
-                marginLeft: "auto"
+                marginLeft: "auto",
+                fontFamily: "Inter, Arial, sans-serif",
               }}
             >
               Download
@@ -171,8 +163,9 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
           overflow: "hidden",
           marginBottom: 32,
+          fontFamily: "Inter, Arial, sans-serif",
         }}>
-          <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
+          <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0, fontFamily: "Inter, Arial, sans-serif" }}>
             <thead>
               <tr style={{ background: "#f3f4f6", textAlign: "left" }}>
                 <th style={thStyle}>Date</th>
@@ -195,11 +188,12 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
                       padding: "4px 16px",
                       fontWeight: 600,
                       fontSize: 15,
+                      fontFamily: "Inter, Arial, sans-serif",
                     }}>
                       {t.status}
                     </span>
                   </td>
-                  <td style={{ ...tdStyle, color: "#3b82f6" }}>{t.description}</td>
+                  <td style={{ ...tdStyle, color: "#3b82f6", fontFamily: "Inter, Arial, sans-serif" }}>{t.description}</td>
                 </tr>
               ))}
             </tbody>
@@ -212,17 +206,18 @@ const Transactions: React.FC<{ onBack: () => void }> = ({ onBack }) => {
             background: "#e5e7eb",
             color: "#222",
             fontWeight: 700,
-            fontSize: 16,
+            fontSize: 14,
             padding: "10px 28px",
             border: "none",
             borderRadius: 8,
             cursor: "pointer",
             marginBottom: 32,
             marginTop: 0,
-            display: "block"
+            display: "block",
+            fontFamily: "Inter, Arial, sans-serif",
           }}
         >
-          Back to Summary
+          Back to Dashboard
         </button>
       </div>
     </div>
@@ -241,6 +236,7 @@ const navButtonStyle: React.CSSProperties = {
   padding: "8px 0",
   borderRadius: 4,
   transition: "background 0.2s",
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
 const filterInputStyle: React.CSSProperties = {
@@ -251,6 +247,7 @@ const filterInputStyle: React.CSSProperties = {
   background: "#f8fafc",
   fontSize: 16,
   marginTop: 4,
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
 const thStyle: React.CSSProperties = {
@@ -259,6 +256,7 @@ const thStyle: React.CSSProperties = {
   fontSize: 16,
   color: "#222",
   borderBottom: "1px solid #e5e7eb",
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
 const tdStyle: React.CSSProperties = {
@@ -267,6 +265,7 @@ const tdStyle: React.CSSProperties = {
   fontSize: 15,
   color: "#222",
   background: "#fff",
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
 function formatDate(dateStr: string) {

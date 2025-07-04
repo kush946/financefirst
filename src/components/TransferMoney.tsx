@@ -57,7 +57,7 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
   };
 
   return (
-    <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
+    <div style={{ background: "#f8fafc", minHeight: "100vh", fontFamily: "Inter, Arial, sans-serif" }}>
       {/* Navigation Bar */}
       <nav
         style={{
@@ -72,9 +72,10 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
           top: 0,
           zIndex: 10,
           boxSizing: "border-box",
+          fontFamily: "Inter, Arial, sans-serif",
         }}
       >
-        <div style={{ fontWeight: 700, fontSize: 22, color: "#222" }}>
+        <div style={{ fontWeight: 700, fontSize: 18, color: "#222", fontFamily: "Inter, Arial, sans-serif" }}>
           FinanceFirst
         </div>
         <div style={{ flex: 1 }} />
@@ -82,34 +83,36 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
           background: "#e5e7eb",
           color: "#222",
           fontWeight: 600,
-          fontSize: 16,
+          fontSize: 14,
           padding: "8px 24px",
           border: "none",
           borderRadius: 20,
           cursor: "pointer",
+          fontFamily: "Inter, Arial, sans-serif",
         }}>Help</button>
       </nav>
 
-      <div style={{ maxWidth: 500, margin: "48px auto 0 auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ maxWidth: 500, margin: "48px auto 0 auto", display: "flex", flexDirection: "column", alignItems: "center", fontFamily: "Inter, Arial, sans-serif" }}>
         <button
           onClick={onBack}
           style={{
             background: "#e5e7eb",
             color: "#222",
             fontWeight: 600,
-            fontSize: 16,
+            fontSize: 14,
             padding: "8px 24px",
             border: "none",
             borderRadius: 16,
             cursor: "pointer",
             marginBottom: 32,
-            alignSelf: "flex-start"
+            alignSelf: "flex-start",
+            fontFamily: "Inter, Arial, sans-serif",
           }}
         >
-          Back to Summary
+          Back to Dashboard
         </button>
 
-        <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 32, textAlign: "center" }}>Transfer money</h1>
+        <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, textAlign: "center", fontFamily: "Inter, Arial, sans-serif" }}>Transfer money</h1>
 
         {step === "form" && (
           <form onSubmit={handleSubmit} style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
@@ -165,13 +168,14 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
                 background: "#189dfb",
                 color: "#fff",
                 fontWeight: 700,
-                fontSize: 20,
-                padding: "16px 0",
+                fontSize: 16,
+                padding: "12px 0",
                 border: "none",
                 borderRadius: 24,
                 cursor: "pointer",
-                marginTop: 16,
-                textAlign: "center"
+                marginTop: 12,
+                textAlign: "center",
+                fontFamily: "Inter, Arial, sans-serif",
               }}
             >
               Continue
@@ -180,13 +184,13 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
         )}
 
         {step === "confirm" && (
-          <div style={{ background: "#fff", borderRadius: 12, padding: 32, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", width: "100%", textAlign: "center" }}>
-            <h3 style={{ fontWeight: 700, fontSize: 22, marginBottom: 24 }}>Confirm Transfer</h3>
-            <p><strong>From:</strong> {form.fromAccount}</p>
-            <p><strong>To:</strong> {form.toAccount}</p>
-            <p><strong>IFSC:</strong> {form.ifsc}</p>
-            <p><strong>Amount:</strong> ₹{form.amount}</p>
-            <p><strong>Method:</strong> {form.method}</p>
+          <div style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", width: "100%", textAlign: "center", fontFamily: "Inter, Arial, sans-serif" }}>
+            <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 18 }}>Confirm Transfer</h3>
+            <p style={{ fontSize: 15 }}><strong>From:</strong> {form.fromAccount}</p>
+            <p style={{ fontSize: 15 }}><strong>To:</strong> {form.toAccount}</p>
+            <p style={{ fontSize: 15 }}><strong>IFSC:</strong> {form.ifsc}</p>
+            <p style={{ fontSize: 15 }}><strong>Amount:</strong> ₹{form.amount}</p>
+            <p style={{ fontSize: 15 }}><strong>Method:</strong> {form.method}</p>
             <button
               onClick={handleConfirm}
               style={{
@@ -194,14 +198,15 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
                 background: "#189dfb",
                 color: "#fff",
                 fontWeight: 700,
-                fontSize: 18,
-                padding: "14px 0",
+                fontSize: 15,
+                padding: "10px 0",
                 border: "none",
                 borderRadius: 20,
                 cursor: "pointer",
-                marginBottom: 12,
-                marginTop: 24,
-                textAlign: "center"
+                marginBottom: 10,
+                marginTop: 18,
+                textAlign: "center",
+                fontFamily: "Inter, Arial, sans-serif",
               }}
             >
               Confirm & Transfer
@@ -213,12 +218,13 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
                 background: "#e5e7eb",
                 color: "#222",
                 fontWeight: 600,
-                fontSize: 16,
-                padding: "12px 0",
+                fontSize: 14,
+                padding: "10px 0",
                 border: "none",
                 borderRadius: 16,
                 cursor: "pointer",
-                textAlign: "center"
+                textAlign: "center",
+                fontFamily: "Inter, Arial, sans-serif",
               }}
             >
               Back
@@ -227,10 +233,10 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
         )}
 
         {step === "success" && (
-          <div style={{ background: "#fff", borderRadius: 12, padding: 32, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", width: "100%", textAlign: "center" }}>
-            <h3 style={{ color: "#189dfb", fontWeight: 700, fontSize: 22, marginBottom: 16 }}>Transfer Successful!</h3>
-            <p><strong>Reference No:</strong> {refNo}</p>
-            <p>An email notification has been sent to your registered email.</p>
+          <div style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 1px 4px rgba(0,0,0,0.04)", width: "100%", textAlign: "center", fontFamily: "Inter, Arial, sans-serif" }}>
+            <h3 style={{ color: "#189dfb", fontWeight: 700, fontSize: 18, marginBottom: 12 }}>Transfer Successful!</h3>
+            <p style={{ fontSize: 15 }}><strong>Reference No:</strong> {refNo}</p>
+            <p style={{ fontSize: 15 }}>An email notification has been sent to your registered email.</p>
             <button
               onClick={onBack}
               style={{
@@ -238,13 +244,14 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
                 background: "#189dfb",
                 color: "#fff",
                 fontWeight: 700,
-                fontSize: 18,
-                padding: "14px 0",
+                fontSize: 15,
+                padding: "10px 0",
                 border: "none",
                 borderRadius: 20,
                 cursor: "pointer",
-                marginTop: 24,
-                textAlign: "center"
+                marginTop: 18,
+                textAlign: "center",
+                fontFamily: "Inter, Arial, sans-serif",
               }}
             >
               Back to Summary
@@ -258,16 +265,17 @@ const TransferMoney: React.FC<TransferMoneyProps> = ({ onBack }) => {
 
 const inputStyle: React.CSSProperties = {
   width: "100%",
-  padding: "18px 16px",
-  marginBottom: 20,
+  padding: "12px 12px",
+  marginBottom: 16,
   borderRadius: 16,
   border: "1px solid #d1d5db",
   background: "#f8fafc",
-  fontSize: 18,
+  fontSize: 15,
   fontWeight: 500,
   outline: "none",
   boxSizing: "border-box",
-  textAlign: "center"
+  textAlign: "center",
+  fontFamily: "Inter, Arial, sans-serif",
 };
 
 export default TransferMoney;
